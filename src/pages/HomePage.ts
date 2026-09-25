@@ -21,6 +21,7 @@ export class HomePage extends BasePage {
     //1. public page actions(methods) / behaviour: Encapsulation
     async logoutHere(): Promise<void> {
         await this.logoutLink.click();
+        console.log("check first change in repo")
     }
 
    async isLogoutLinkExist(): Promise<boolean> {
