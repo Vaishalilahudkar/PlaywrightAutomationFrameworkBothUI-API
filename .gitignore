@@ -1,0 +1,20 @@
+# Playwright
+# this for folder
+
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/allure-report/
+/allure-results/
+
+#env files
+config/.env.*
+
+#build
+dist/
+
+# for files directly
+reporting-labs.history.json
