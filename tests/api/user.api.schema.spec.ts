@@ -89,6 +89,7 @@ test('get a user - schema Array test', async ({ ApiHelper }) => {
         status: 'active'
     };
 
+    
     //get a user:
     let getUserResponse = await ApiHelper.get(`/public/v2/users`, AUTH_HEADER);
     expect((getUserResponse).status).toBe(200);
