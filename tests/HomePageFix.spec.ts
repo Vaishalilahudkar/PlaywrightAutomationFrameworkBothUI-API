@@ -4,7 +4,7 @@ import process from 'node:process';
 //Hooks added here
 test.beforeEach(async({loginPage})=>{
 await loginPage.goToLoginPage();
-await loginPage.doLogin(process.env.username1!, process.env.password1!);
+await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
 });
 
 

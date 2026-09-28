@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
     await loginPage.goToLoginPage();
-    await loginPage.doLogin(process.env.USERNAME, process.env.PASSWORD);
+    await loginPage.doLogin(process.env.USERNAME!, process.env.PASSWORD!);
 });
 
 test('Logout from page test', async ({ page }) => {

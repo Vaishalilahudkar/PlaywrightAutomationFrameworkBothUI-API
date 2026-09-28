@@ -13,11 +13,11 @@ test.beforeEach(async ({ loginPage }) => {
     console.log('before each method executed as logged in to page');
 });
 
-test('login page title test', async ({ loginPage }) => {
+test('login page title test', async ({ basePage }) => {
     // this meta from reporing labs to give more info about test in report
     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
 
-    let pageTitle = await loginPage.getPageTitle();  //take it from basePage //LoginPage method getLoginPageTitle() commented
+    let pageTitle = await basePage.getPageTitle();  //take it from basePage //LoginPage method getLoginPageTitle() commented
     console.log('Page title is = ' + pageTitle);
 
     // this meta from reporing labs to print in reportlike console.log  
@@ -39,7 +39,7 @@ test('forgot psw link exist test', async ({ loginPage }) => {
 test('user able to login test', async ({ loginPage }) => {
     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
 
-    let forgotLinkExist = await loginPage.doLogin(process.env.username1!, process.env.password1!);
+    let forgotLinkExist = await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD!);
 
 })
 

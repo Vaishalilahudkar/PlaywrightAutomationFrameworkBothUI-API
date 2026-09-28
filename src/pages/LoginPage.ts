@@ -25,7 +25,7 @@ export class LoginPage extends BasePage {
         await this.page.goto('opencart/index.php?route=account/login');
     }
 
-    // async getLoginPageTitle(): Promise<string> {
+    // async getPageTitle(): Promise<string> {
     //     return await this.page.title();
     // }
 
