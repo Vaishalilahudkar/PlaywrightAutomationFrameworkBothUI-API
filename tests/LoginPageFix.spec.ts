@@ -51,7 +51,7 @@ test('logout link exist test', async ({ homePage }) => {
 })
 
 //Data driven Approve 1 by csv file
-let testdataFromCsv = CsvHelper.readCsv('src/testData/logindata.csv')
+let testdataFromCsv = CsvHelper.readCsv('src/testdata/logindata.csv')
 for (let row of testdataFromCsv) {
     test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
