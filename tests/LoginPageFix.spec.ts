@@ -52,7 +52,7 @@ test('logout link exist test', async ({ homePage }) => {
 })
 
 //Data driven Approve 1 by csv file
-// let testdataFromCsv = CsvHelper.readCsv('src/testdata/logindata.csv')
+// let testdataFromCsv = CsvHelper.readCsv('src/testData/logindata.csv')
 // for (let row of testdataFromCsv) {
 //     test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage, page }) => {
 //         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
@@ -65,7 +65,7 @@ test('logout link exist test', async ({ homePage }) => {
 // }
 
 //DD_2: read xlsx data directly fromn the excel file and loop the test method row wise...
-let testExcelData = ExcelHelper.readExcel('src/testdata/opencarttestdata.xlsx', 'login');
+let testExcelData = ExcelHelper.readExcel('src/testData/opencarttestdata.xlsx', 'login');
 for (let row of testExcelData) {
     test(`login to app with invalid credentials with Excel Data- ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
 
@@ -79,7 +79,7 @@ for (let row of testExcelData) {
 //Pros:
 //1. inbuilt method: parse, lightweight, smaller data source
 //DD_3: read JSON data directly fromn the JSON file and loop the test method row wise...
-let testJSONData = JsonHelper.readJson('src/testdata/logindata.json');
+let testJSONData = JsonHelper.readJson('src/testDgit ata/logindata.json');
 for (let row of testJSONData) {
     test(`login to app with invalid credentials with JSON Data- ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
