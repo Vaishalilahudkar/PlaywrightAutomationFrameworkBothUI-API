@@ -79,7 +79,7 @@ for (let row of testExcelData) {
 //Pros:
 //1. inbuilt method: parse, lightweight, smaller data source
 //DD_3: read JSON data directly fromn the JSON file and loop the test method row wise...
-let testJSONData = JsonHelper.readJson('src/testDgit ata/logindata.json');
+let testJSONData = JsonHelper.readJson('src/testData/logindata.json');
 for (let row of testJSONData) {
     test(`login to app with invalid credentials with JSON Data- ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
