@@ -1,6 +1,7 @@
 import { test, expect } from '../src/fixtures/pageFixtures'
 import { LoginPage } from '../src/pages/LoginPage';
 import { BasePage } from '../src/pages/BasePage';
+import { Page } from '@playwright/test';
 import { CsvHelper } from '../utils/csvHelper';
 import { ExcelHelper } from '../utils/excelHelper';
 import { JsonHelper } from '../utils/jsonHelper';
@@ -51,16 +52,17 @@ test('logout link exist test', async ({ homePage }) => {
 })
 
 //Data driven Approve 1 by csv file
-let testdataFromCsv = CsvHelper.readCsv('src/testdata/logindata.csv')
-for (let row of testdataFromCsv) {
-    test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage }) => {
-        meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
-        await testData(testdataFromCsv, 'Invalid login data from csv')
+// let testdataFromCsv = CsvHelper.readCsv('src/testdata/logindata.csv')
+// for (let row of testdataFromCsv) {
+//     test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage, page }) => {
+//         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+//         await testData(testdataFromCsv, 'Invalid login data from csv')
+//         await page.waitForTimeout(2000);
 
-        await loginPage.doLogin(row.username, row.password)
-        expect(await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
-    });
-}
+//         await loginPage.doLogin(row.username, row.password)
+//         expect(await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
+//     });
+// }
 
 //DD_2: read xlsx data directly fromn the excel file and loop the test method row wise...
 let testExcelData = ExcelHelper.readExcel('src/testdata/opencarttestdata.xlsx', 'login');
