@@ -20,7 +20,7 @@ let userId:number;
 test.describe.serial('Running E2E crud API test in serail',() =>{
 
     //GET CALL
-test('GET API - get all users ',async({ApiHelper})=>{
+test('@smoke @regression GET API - get all users ',async({ApiHelper})=>{
     let response=await ApiHelper.get('public/v2/users', AUTH_HEADER)
     console.log("GET call reponse is ",response);
     expect(response.status).toBe(200);
@@ -28,7 +28,7 @@ test('GET API - get all users ',async({ApiHelper})=>{
 
 
 //POST CALL
-test('POST API - create  users ',async({ApiHelper})=>{
+test('@regression POST API - create  users ',async({ApiHelper})=>{
     let response=await ApiHelper.post('public/v2/users', jsonReqData, AUTH_HEADER)
     console.log("POST call reponse is ", response);
     expect((await response).status).toBe(201);
@@ -38,7 +38,7 @@ test('POST API - create  users ',async({ApiHelper})=>{
 
 
 //PUT CALL
-test('PUT API - update  users ',async({ApiHelper})=>{
+test('@regression PUT API - update  users ',async({ApiHelper})=>{
 let updateData={
     "name": "Practise user Automation-updated"
   }
@@ -51,7 +51,7 @@ let updateData={
 
 
 //DELETE CALL
-test('DELETE API - update  users ',async({ApiHelper})=>{
+test('@regression DELETE API - update  users ',async({ApiHelper})=>{
 
 
     let response=await ApiHelper.delete(`public/v2/users/${userId}`, AUTH_HEADER)

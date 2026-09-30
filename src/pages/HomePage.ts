@@ -17,6 +17,10 @@ export class HomePage extends BasePage {
         this.searchBox = page.getByRole('textbox', { name: 'Search' });
         this.searchIcon = page.locator('#search button')
     }
+     async getHomePageTitle(): Promise<string> {
+        return await this.page.title();
+    }
+
 
     //1. public page actions(methods) / behaviour: Encapsulation
     async logoutHere(): Promise<void> {
@@ -26,7 +30,6 @@ export class HomePage extends BasePage {
     }
 
    async isLogoutLinkExist(): Promise<boolean> {
-        await this.page.waitForTimeout(2000);
         return await this.logoutLink.isVisible();
     }
 

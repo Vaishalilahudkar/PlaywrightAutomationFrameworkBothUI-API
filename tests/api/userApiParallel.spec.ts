@@ -34,7 +34,7 @@ let response = await ApiHelper.post(('public/v2/users'), jsonReqData, AUTH_HEADE
 
 //Test case 1: Create user test +verify AAA
 //POST ---> userID --->GET ID --->verify
-test('create user test', async({ApiHelper})=>{
+test('@regression create user test', async({ApiHelper})=>{
 //create user
 let createUserResponse = await createUser(ApiHelper)
 
@@ -47,7 +47,7 @@ expect (getResponse.body.name).toBe('Practise user');
 
 //Test case 2: Update user test +verify AAA
 //POST ---> userID --->GET ID --->verify --->Update -->Get User -->Verify get call for updated user
-test('Update  user test', async({ApiHelper})=>{
+test('@regression Update  user test', async({ApiHelper})=>{
 //create user
 let createUserResponse = await createUser(ApiHelper)
 
@@ -63,7 +63,7 @@ expect(updateResponse.body.name).toBe(updateReqData.name);
 })
 
 //Test case 3: Update and delete user test +verify AAA
-test('Update and delete user test', async({ApiHelper})=>{
+test('@regression Update and delete user test', async({ApiHelper})=>{
 //create user
 let createUserResponse = await createUser(ApiHelper)
 

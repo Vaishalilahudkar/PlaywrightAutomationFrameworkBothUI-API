@@ -8,18 +8,17 @@ await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
 });
 
 
-test('Logout from page test', async ({ homePage }) => {
-    await homePage.logoutHere();
-    let pageTitle = await homePage.logoutGetTitle();
-    console.log('HomePage title is = ' + pageTitle);
-    expect(pageTitle).toBe('Account Logout');
+test('@smoke home page title test', async ({ homePage }) => {
+    let pageTitle = await homePage.getHomePageTitle();
+    console.log('home page title: ', pageTitle);
+    expect(pageTitle).toBe('My Account');
 });
 
-test('logout link exist test', async ({homePage}) => {
+test('@smoke logout link exist test', async ({ homePage }) => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
 
-test('home page headers exist test', async ({homePage}) => {
+test('@regression home page headers exist test', async ({ homePage }) => {
     let allHeaders = await homePage.getHomePageHeaders();
     console.log('home page headers: ', allHeaders);
     expect.soft(allHeaders).toHaveLength(4);

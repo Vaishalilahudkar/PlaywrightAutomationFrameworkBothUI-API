@@ -6,6 +6,7 @@ import { CsvHelper } from '../utils/csvHelper';
 import { ExcelHelper } from '../utils/excelHelper';
 import { JsonHelper } from '../utils/jsonHelper';
 import { meta, log, testData } from 'reporting-labs'
+import * as allure from "allure-js-commons";
 
 
 //import process from 'node:process';
@@ -33,37 +34,46 @@ test('forgot psw link exist test', async ({ loginPage }) => {
     meta({ priority: 'P3', severity: 'major', story: 'US101', epic: "ep101", feature: 'F201', issue: 'login page', owner: 'Manish' })
 
 
-    let forgotLinkExist = await loginPage.isForgottenPwdLinkExist();
-    console.log('forgotLinkExist is = ' + forgotLinkExist);
-    expect(forgotLinkExist).toBeTruthy();
+     expect(await loginPage.isForgottenPwdLinkExist()).toBeTruthy();
 })
 
-// test('user able to login test', async ({ loginPage }) => {
-//     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+test('@regression user is able to login to app with valid credentials', async ({ loginPage, homePage }) => {
 
-//     await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
+    meta({ priority: 'P1', severity: 'blocker', owner: 'Manish', story: 'US102', epic: 'ep300', feature: 'F31', issue: 'bug35' });
+    await testData({ username: process.env.USERNAME1!, password: process.env.PASSWORD1! }, 'Login');
 
-// })
+    await allure.suite("Login Tests");
+    await allure.severity("critical");
+    await allure.feature("Authentication");
+    await allure.story("Valid Login");
+    await allure.description("Verify user can login with valid credentials");
 
-// test('logout link exist test', async ({ homePage }) => {
-//     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+    await allure.step("Login with valid creds", async () => {
+        await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
+    });
 
-//     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
+    await allure.step("Verify logout link is visible", async () => {
+        expect.soft(await homePage.isLogoutLinkExist()).toBeTruthy();
+    });
 
-// })
+    await allure.step("Verify logout home page title is visible", async () => {
+        expect.soft(await homePage.getHomePageTitle()).toBe('My Account');
+    });
+
+});
 
 //Data driven Approve 1 by csv file
-// let testdataFromCsv = CsvHelper.readCsv('src/testData/logindata.csv')
-// for (let row of testdataFromCsv) {
-//     test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage, page }) => {
-//         meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
-//         await testData(testdataFromCsv, 'Invalid login data from csv')
-//         await page.waitForTimeout(2000);
+let testdataFromCsv = CsvHelper.readCsv('src/testData/logindata.csv')
+for (let row of testdataFromCsv) {
+    test(`login to page using invalid testdata from csv file- ${row.username} - ${row.password}`, async ({ loginPage, homePage, page }) => {
+        meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+        await testData(testdataFromCsv, 'Invalid login data from csv')
+        await page.waitForTimeout(2000);
 
-//         await loginPage.doLogin(row.username, row.password)
-//         expect(await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
-//     });
-// }
+        await loginPage.doLogin(row.username, row.password)
+        expect(await loginPage.isInvalidLoginErrorDisplayed()).toBeTruthy();
+    });
+}
 
 //DD_2: read xlsx data directly fromn the excel file and loop the test method row wise...
 let testExcelData = ExcelHelper.readExcel('src/testData/opencarttestdata.xlsx', 'login');

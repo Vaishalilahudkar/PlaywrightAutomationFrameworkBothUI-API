@@ -1,7 +1,7 @@
 import { test, Page, expect } from "@playwright/test"
 import { LoginPage } from '../src/pages/LoginPage';
 import { HomePage } from '../src/pages/HomePage';
-import process from 'node:process';
+//import process from 'node:process';
 
 // create reference of loginPage.ts file
 let loginPage: LoginPage;
@@ -15,20 +15,17 @@ test.beforeEach(async ({ page }) => {
     await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
 });
 
-test('Logout from page test', async ({ page }) => {
-    await homePage.logoutHere();
-
-    let pageTitle = await homePage.logoutGetTitle();
-    console.log('HomePage title is = ' + pageTitle);
-    expect(pageTitle).toBe('Account Logout');
+test.skip('home page title test', async () => {
+    let pageTitle = await homePage.getHomePageTitle();
+    console.log('home page title: ', pageTitle);
+    expect(pageTitle).toBe('My Account');
 });
 
-test('logout link exist test', async () => {
-    await homePage.logoutHere();
+test.skip('logout link exist test', async () => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
 
-test('home page headers exist test', async () => {
+test.skip('home page headers exist test', async () => {
     let allHeaders = await homePage.getHomePageHeaders();
     console.log('home page headers: ', allHeaders);
     expect.soft(allHeaders).toHaveLength(4);

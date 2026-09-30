@@ -7,8 +7,11 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/reports/
+/reporting-labs/
 /allure-report/
 /allure-results/
+reporting-labs.history.json
 
 #env files
 config/.env.*

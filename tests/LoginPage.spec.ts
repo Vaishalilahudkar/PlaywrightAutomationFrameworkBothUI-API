@@ -1,44 +1,29 @@
-import { test , Page,expect } from "@playwright/test"
-import {LoginPage} from '../src/pages/LoginPage';
-import {HomePage} from '../src/pages/HomePage';
-import { BasePage } from "../src/pages/BasePage";
-//import process from 'node:process';
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../src/pages/LoginPage';
+import { HomePage } from '../src/pages/HomePage';
 
-// create reference of loginPage.ts file
-let loginPage: LoginPage ;
-let homePage: HomePage ;
-let basePage: BasePage ;
+let loginPage: LoginPage;
+let homePage: HomePage;
 
-//Hooks added here
-test.beforeEach(async ({page})=>{
-    loginPage= new LoginPage(page);
-    homePage=new HomePage(page);
-    basePage=new BasePage(page);
+test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page);
     await loginPage.goToLoginPage();
-
+    homePage = new HomePage(page);
 });
 
-test('login page title test', async ({})=>{
-    let pageTitle= await basePage.getPageTitle();
-    console.log('Page title is = '+pageTitle);
+//AAA
+test.skip('login page title test', async () => {
+    let pageTitle = await loginPage.getPageTitle();
+    console.log('Login page title : ', pageTitle);
     expect(pageTitle).toBe('Account Login');
-})
+});
 
+test.skip('forgot pwd link exist test', async () => {
+    expect(await loginPage.isForgottenPwdLinkExist()).toBeTruthy();
+});
 
-test('forgot psw link exist test', async ({})=>{
-    let forgotLinkExist= await loginPage.isForgottenPwdLinkExist();
-    console.log('forgotLinkExist is = '+forgotLinkExist);
-    expect(forgotLinkExist).toBeTruthy();
-})
-
-test('user able to login test', async ({})=>{
-    let forgotLinkExist= await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1! );
-    
-    
-})
-
-// test('logout link exist test', async ({})=>{
-//    expect( await homePage.isLogoutLinkExist()).toBeTruthy();
-    
-// })
-
+test.skip('user is able to login to app', async () => {
+    await loginPage.doLogin('pwapril@pw.com', 'pw123');
+    expect.soft(await homePage.isLogoutLinkExist()).toBeTruthy();
+    expect.soft(await homePage.getHomePageTitle()).toBe('My Account');
+});

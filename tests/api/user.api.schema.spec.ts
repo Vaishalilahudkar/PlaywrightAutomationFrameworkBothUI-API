@@ -45,7 +45,7 @@ let ajv = new Ajv();
   ]
 }
 
-test('get a user - schema test', async ({ ApiHelper }) => {
+test('@smoke get a user - schema test', async ({ ApiHelper }) => {
 
     //User JS Object:
     let userData = {
@@ -79,7 +79,7 @@ test('get a user - schema test', async ({ ApiHelper }) => {
 });
 
 
-test('get a user - schema Array test', async ({ ApiHelper }) => {
+test('@smoke get a user - schema Array test', async ({ ApiHelper }) => {
 
     //User JS Object:
     let userData = {
