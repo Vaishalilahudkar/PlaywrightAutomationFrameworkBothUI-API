@@ -22,7 +22,10 @@ export class LoginPage extends BasePage {
 
     //3. public page actions(methods) / behaviour: Encapsulation
     async goToLoginPage(): Promise<void> {
-        await this.page.goto('opencart/index.php?route=account/login');
+        await this.page.goto('opencart/index.php?route=account/login'),{
+             waitUntil: "domcontentloaded",
+             timeout: 60000
+        }
     }
 
     // async getPageTitle(): Promise<string> {
@@ -34,7 +37,7 @@ export class LoginPage extends BasePage {
     }
 
     async doLogin(username: string, password: string): Promise<void> {
-        console.log(`user creds: ${username} - ${password}`);
+        console.log(`app user creds: ${username} - ${password}`);
         await this.emailId.fill(username);
         await this.password.fill(password);
         await this.loginBtn.click();
