@@ -7,6 +7,7 @@ import { ExcelHelper } from '../utils/excelHelper';
 import { JsonHelper } from '../utils/jsonHelper';
 import { meta, log, testData } from 'reporting-labs'
 
+
 //import process from 'node:process';
 
 test.beforeEach(async ({ loginPage }) => {
@@ -37,19 +38,19 @@ test('forgot psw link exist test', async ({ loginPage }) => {
     expect(forgotLinkExist).toBeTruthy();
 })
 
-test('user able to login test', async ({ loginPage }) => {
-    meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+// test('user able to login test', async ({ loginPage }) => {
+//     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
 
-    let forgotLinkExist = await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD!);
+//     await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
 
-})
+// })
 
-test('logout link exist test', async ({ homePage }) => {
-    meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
+// test('logout link exist test', async ({ homePage }) => {
+//     meta({ priority: 'P2', severity: 'minor', story: 'US101', epic: "ep100", feature: 'F200', issue: 'login page', owner: 'Vaishali' })
 
-    expect(await homePage.isLogoutLinkExist()).toBeTruthy();
+//     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 
-})
+// })
 
 //Data driven Approve 1 by csv file
 // let testdataFromCsv = CsvHelper.readCsv('src/testData/logindata.csv')

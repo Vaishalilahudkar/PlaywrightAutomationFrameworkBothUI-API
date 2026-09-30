@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
     await loginPage.goToLoginPage();
-    await loginPage.doLogin(process.env.USERNAME!, process.env.PASSWORD!);
+    await loginPage.doLogin(process.env.USERNAME1!, process.env.PASSWORD1!);
 });
 
 test('Logout from page test', async ({ page }) => {
@@ -24,6 +24,7 @@ test('Logout from page test', async ({ page }) => {
 });
 
 test('logout link exist test', async () => {
+    await homePage.logoutHere();
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
 

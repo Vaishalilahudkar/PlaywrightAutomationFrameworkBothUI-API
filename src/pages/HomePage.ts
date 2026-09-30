@@ -20,15 +20,18 @@ export class HomePage extends BasePage {
 
     //1. public page actions(methods) / behaviour: Encapsulation
     async logoutHere(): Promise<void> {
+        await this.page.waitForTimeout(2000);
         await this.logoutLink.click();
         console.log("check first change in repo")
     }
 
    async isLogoutLinkExist(): Promise<boolean> {
+        await this.page.waitForTimeout(2000);
         return await this.logoutLink.isVisible();
     }
 
     async logoutGetTitle(): Promise<string> {
+        await this.page.waitForTimeout(2000);
         return await this.page.title();
     }
 

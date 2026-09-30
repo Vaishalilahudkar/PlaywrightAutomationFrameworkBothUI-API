@@ -37,8 +37,8 @@ test('user able to login test', async ({})=>{
     
 })
 
-test('logout link exist test', async ({})=>{
-   expect( await homePage.isLogoutLinkExist()).toBeTruthy();
+// test('logout link exist test', async ({})=>{
+//    expect( await homePage.isLogoutLinkExist()).toBeTruthy();
     
-})
+// })
 
