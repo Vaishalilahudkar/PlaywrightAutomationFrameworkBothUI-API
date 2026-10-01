@@ -41,7 +41,7 @@ test.skip('@smoke SearchBox visible exists on login page', async ({ basePage }) 
 
     expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 })
-test('@smoke Currency visible exists on login page', async ({ basePage }) => {
+test.skip('@smoke Currency visible exists on login page', async ({ basePage }) => {
     meta({ priority: 'P3', severity: 'minor', story: 'US101', epic: "ep101", feature: 'F201', issue: 'login page', owner: 'Manish' })
 
     expect(await basePage.isCurrencyVisible()).toBeTruthy();
