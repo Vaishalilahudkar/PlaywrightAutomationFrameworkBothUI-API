@@ -22,24 +22,28 @@ export class HomePage extends BasePage {
     }
 
 
+
     //1. public page actions(methods) / behaviour: Encapsulation
     async logoutHere(): Promise<void> {
-        await this.page.waitForTimeout(2000);
+        await this.logoutLink.waitFor({ state: 'visible' });
         await this.logoutLink.click();
         console.log("check first change in repo")
     }
 
    async isLogoutLinkExist(): Promise<boolean> {
-        return await this.logoutLink.isVisible();
+      return await this.logoutLink.isVisible();
+       
     }
 
     async logoutGetTitle(): Promise<string> {
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(200);
         return await this.page.title();
     }
 
 
     async getHomePageHeaders(): Promise<string[]> {
+       
+        await this.headers.waitFor({ state: 'visible' });
         return await this.headers.allInnerTexts();
     }
 

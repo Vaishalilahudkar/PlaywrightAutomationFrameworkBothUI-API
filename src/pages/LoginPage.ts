@@ -24,7 +24,7 @@ export class LoginPage extends BasePage {
     async goToLoginPage(): Promise<void> {
         await this.page.goto('opencart/index.php?route=account/login'),{
              waitUntil: "domcontentloaded",
-             timeout: 60000
+             timeout: 30000
         }
     }
 
@@ -40,6 +40,7 @@ export class LoginPage extends BasePage {
         console.log(`app user creds: ${username} - ${password}`);
         await this.emailId.fill(username);
         await this.password.fill(password);
+      //  await this.loginBtn.isVisible();
         await this.loginBtn.click();
     }
 
