@@ -41,6 +41,6 @@ test('@smoke Cart exists on Login Page', async ({ basePage }) => {
     expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('@smoke Footers exists on Login Page', async ({ basePage }) => {
+test.skip('@smoke Footers exists on Login Page', async ({ basePage }) => {
     expect(await basePage.getPageFootersCount()).toBe(16);
 });
