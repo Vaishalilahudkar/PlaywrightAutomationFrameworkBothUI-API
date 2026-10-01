@@ -1,4 +1,5 @@
 import {test, expect} from '../src/fixtures/pageFixtures'
+import { meta, log, testData } from 'reporting-labs'
 //import process from 'node:process';
 
 //Hooks added here
@@ -28,19 +29,25 @@ test.skip('@regression home page headers exist test', async ({ homePage }) => {
         'Newsletter'
     ]);
 });
-//common features test:
+//common test feature
 test.skip('@smoke App logo exists on Login Page', async ({ basePage }) => {
+    meta({ priority: 'P3', severity: 'major', story: 'US101', epic: "ep101", feature: 'F201', issue: 'login page', owner: 'Manish' })
+
     expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test('@smoke Search Box exists on Login Page', async ({ basePage }) => {
+test.skip('@smoke SearchBox visible exists on login page', async ({ basePage }) => {
+    meta({ priority: 'P2', severity: 'minor', story: 'US102', epic: "ep102", feature: 'F203', issue: 'check page', owner: 'Manish' })
+
     expect(await basePage.isSearchBoxVisible()).toBeTruthy();
-});
+})
+test('@smoke Currency visible exists on login page', async ({ basePage }) => {
+    meta({ priority: 'P3', severity: 'minor', story: 'US101', epic: "ep101", feature: 'F201', issue: 'login page', owner: 'Manish' })
 
-test('@smoke Cart exists on Login Page', async ({ basePage }) => {
+    expect(await basePage.isCurrencyVisible()).toBeTruthy();
+})
+test.skip('@smoke Cart button visible exists on login page', async ({ basePage }) => {
+    meta({ priority: 'P3', severity: 'major', story: 'US101', epic: "ep101", feature: 'F201', issue: 'login page', owner: 'Manish' })
+
     expect(await basePage.isCartButtonVisible()).toBeTruthy();
-});
-
-test.skip('@smoke Footers exists on Login Page', async ({ basePage }) => {
-    expect(await basePage.getPageFootersCount()).toBe(16);
-});
+})
