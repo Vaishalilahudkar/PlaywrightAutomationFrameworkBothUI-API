@@ -1,0 +1,75 @@
+GET call reponse is  {
+  status: 200,
+  body: [
+    {
+      id: 8646211,
+      name: 'manish',
+      email: 'pwautomation_1790931550579@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646210,
+      name: 'manish',
+      email: 'pwautomation_1790931501946@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646209,
+      name: 'manish',
+      email: 'pwautomation_1790931449826@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646204,
+      name: 'manish',
+      email: 'pwautomation_1790930775854@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646203,
+      name: 'manish',
+      email: 'pwautomation_1790930719012@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646200,
+      name: 'manish',
+      email: 'pwautomation_1790930654843@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646199,
+      name: 'manish',
+      email: 'pwautomation_1790930594266@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646171,
+      name: 'manish',
+      email: 'pwautomation_1790928013086@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646170,
+      name: 'manish',
+      email: 'pwautomation_1790927956213@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8645849,
+      name: 'Dipankar Banerjee',
+      email: 'dipankar_banerjee@feeney-mante.test',
+      gender: 'female',
+      status: 'inactive'
+    }
+  ]
+}
