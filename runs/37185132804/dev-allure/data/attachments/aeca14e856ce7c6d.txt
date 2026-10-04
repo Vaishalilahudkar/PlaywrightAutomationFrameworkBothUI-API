@@ -1,0 +1,75 @@
+GET call reponse is  {
+  status: 200,
+  body: [
+    {
+      id: 8646415,
+      name: 'Vimal Dwivedi PhD',
+      email: 'dwivedi_vimal_phd@west.example',
+      gender: 'female',
+      status: 'inactive'
+    },
+    {
+      id: 8646414,
+      name: 'Baidehi Prajapat',
+      email: 'prajapat_baidehi@waelchi.example',
+      gender: 'male',
+      status: 'inactive'
+    },
+    {
+      id: 8646413,
+      name: 'Chapala Jain',
+      email: 'chapala_jain@goyette.example',
+      gender: 'female',
+      status: 'active'
+    },
+    {
+      id: 8646412,
+      name: 'Bankimchandra Johar',
+      email: 'johar_bankimchandra@donnelly.example',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8646411,
+      name: 'Inder Varma',
+      email: 'inder_varma@waters.test',
+      gender: 'female',
+      status: 'active'
+    },
+    {
+      id: 8646410,
+      name: 'Malati Mehrotra III',
+      email: 'malati_mehrotra_iii@lakin-rosenbaum.example',
+      gender: 'female',
+      status: 'active'
+    },
+    {
+      id: 8646409,
+      name: 'Bhooshit Shah',
+      email: 'bhooshit_shah@dietrich.example',
+      gender: 'male',
+      status: 'inactive'
+    },
+    {
+      id: 8646408,
+      name: 'Nawal Mehrotra MD',
+      email: 'md_nawal_mehrotra@halvorson-mayer.example',
+      gender: 'female',
+      status: 'inactive'
+    },
+    {
+      id: 8646407,
+      name: 'Msgr. Digambara Embranthiri',
+      email: 'digambara_embranthiri_msgr@sporer.example',
+      gender: 'female',
+      status: 'active'
+    },
+    {
+      id: 8646406,
+      name: 'Balagovind Nayar MD',
+      email: 'md_balagovind_nayar@feeney.test',
+      gender: 'male',
+      status: 'active'
+    }
+  ]
+}
