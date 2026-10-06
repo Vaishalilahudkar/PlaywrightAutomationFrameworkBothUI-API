@@ -1,0 +1,75 @@
+GET call reponse is  {
+  status: 200,
+  body: [
+    {
+      id: 8653136,
+      name: 'manish',
+      email: 'pwautomation_1791273839831@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8653113,
+      name: 'manish',
+      email: 'pwautomation_1791273774350@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8653018,
+      name: 'manish',
+      email: 'pwautomation_1791272940145@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8653016,
+      name: 'manish',
+      email: 'pwautomation_1791272874626@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652079,
+      name: 'manish',
+      email: 'pwautomation_1791257341550@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652078,
+      name: 'manish',
+      email: 'pwautomation_1791257273085@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652076,
+      name: 'manish',
+      email: 'pwautomation_1791256811158@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652074,
+      name: 'manish',
+      email: 'pwautomation_1791256749466@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652073,
+      name: 'manish',
+      email: 'pwautomation_1791256691523@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8652072,
+      name: 'manish',
+      email: 'pwautomation_1791256630148@open.com',
+      gender: 'male',
+      status: 'active'
+    }
+  ]
+}
