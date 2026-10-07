@@ -1,0 +1,75 @@
+GET call reponse is  {
+  status: 200,
+  body: [
+    {
+      id: 8654965,
+      name: 'manish',
+      email: 'pwautomation_1791366110464@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654964,
+      name: 'manish',
+      email: 'pwautomation_1791366054620@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654961,
+      name: 'manish',
+      email: 'pwautomation_1791365996349@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654947,
+      name: 'manish',
+      email: 'pwautomation_1791365086047@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654946,
+      name: 'manish',
+      email: 'pwautomation_1791365031334@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654940,
+      name: 'Practise user updated',
+      email: 'practise_1791364888452@gmail.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654939,
+      name: 'Practise user',
+      email: 'practise_1791364888065@gmail.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654937,
+      name: 'manish',
+      email: 'pwautomation_1791364830781@open.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654928,
+      name: 'Practise user updated',
+      email: 'practise_1791364474575@gmail.com',
+      gender: 'male',
+      status: 'active'
+    },
+    {
+      id: 8654927,
+      name: 'Practise user',
+      email: 'practise_1791364473899@gmail.com',
+      gender: 'male',
+      status: 'active'
+    }
+  ]
+}
